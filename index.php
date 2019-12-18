@@ -21,12 +21,13 @@ $_SESSION["path"] = $_SERVER["REQUEST_URI"];
   <link href="css/style.css" rel="stylesheet">
 
   <!-- font-awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="lib/fontawesome/css/all.min.css">
 
   <!-- Bootstrap core JavaScript -->
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+  <!-- custom JavaScript -->
+  <script src="js/myjs.js"></script>
 
 
 </head>
@@ -37,26 +38,17 @@ $_SESSION["path"] = $_SERVER["REQUEST_URI"];
   include "modules/mHeader.php";
 
 
-  $a = 1;
-  if (isset($_GET["a"]) == true) #nếu có tham số truyền vào, mặc định là home
-    $a = $_GET["a"];
-  switch ($a) {
+  $layout = 1;
+  if (isset($_GET["layout"]) == true) #nếu có tham số truyền vào, mặc định là homea
+    $layout = $_GET["layout"];
+  switch ($layout) {
     case 1:
       include "pages/pIndex.php";
       break;
     case 2:
-      include "pages/pIndex.php";
-      break;
-    case 3:
-      include "pages/pIndex.php";
-      break;
-    case 4:
-      include "pages/pIndex.php";
-      break;
-    case 5:
       include "pages/giohang/pIndex.php";
       break;
-    case 6:
+    case 3:
       include "pages/taotaikhoan/pIndex.php";
       break;
     default:

@@ -12,7 +12,7 @@ $result = DataProvider::ExecuteQuery($sql);
   while ($row = mysqli_fetch_array($result)) {
     ?>
 
-    <a href="index.php?a=3&id=<?php echo $row["MaLoaiSanPham"]; ?>" class="list-group-item"><?php echo $row["TenLoaiSanPham"]; ?></a>
+    <a href="index.php?layout=1&content=3&id=<?php echo $row["MaLoaiSanPham"]; ?>" class="list-group-item"><?php echo $row["TenLoaiSanPham"]; ?></a>
 
     <?php 
   }

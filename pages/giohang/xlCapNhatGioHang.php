@@ -28,12 +28,12 @@
                    $_SESSION["GioHang"]=serialize($gioHang);
                }
            }
-           DataProvider::ChangeURL("../../index.php?a=5");
+           DataProvider::ChangeURL("../../index.php?layout=2");
        }
        else
        {
            //neu so luong moi khong la so thi khong xu ly mac dinh da ve trang qua ly gio hang
-           DataProvider::ChangeURL("../../index.php?a=5");
+           DataProvider::ChangeURL("../../index.php?layout=2");
        }
    }
    else

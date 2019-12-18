@@ -6,7 +6,7 @@
 if (isset($_GET["id"]))
     $id = $_GET["id"];
 else
-    DataProvider::ChangeURL("index.php?a=404");
+    DataProvider::ChangeURL("index.php?layout=404");
 $sql = "select * from SanPham where BiXoa = 0 and MaLoaiSanPham = $id";
 $result = DataProvider::ExecuteQuery($sql);
 while ($row = mysqli_fetch_array($result)) {

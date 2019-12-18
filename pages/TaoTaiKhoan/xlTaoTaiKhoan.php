@@ -40,6 +40,6 @@
        }
    }
    else{
-       DataProvider::ChangeURL("../../index.php?a=404");
+       DataProvider::ChangeURL("../../index.php?layout=404");
    }
 ?>

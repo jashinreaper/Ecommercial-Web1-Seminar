@@ -61,9 +61,9 @@ if(isset($_SESSION["GioHang"]))
 
     }
     unset($_SESSION["GioHang"]);
-    DataProvider::ChangeURL("../../index.php?a=5&sub=2");
+    DataProvider::ChangeURL("../../index.php?layout=2&sub=2");
 
 }
 else
-         DataProvider::ChangeURL("../../index.php?a=404");
+         DataProvider::ChangeURL("../../index.php?layout=404");
 ?>

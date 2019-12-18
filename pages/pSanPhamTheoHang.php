@@ -5,7 +5,7 @@
     if (isset($_GET["id"]))
         $id = $_GET["id"];
     else
-        DataProvider::ChangeURL("index.php?a=404");
+        DataProvider::ChangeURL("index.php?layout=404");
     $sql = "select * from SanPham where BiXoa = 0 and MaHangSanXuat = $id";
     $result = DataProvider::ExecuteQuery($sql);
 

@@ -24,7 +24,7 @@
 
 
 
- /*space from menubar*/
+ /*space from navbar*/
  body {
   padding-top: 56px;
 }
@@ -76,3 +76,28 @@ footer{
 
 }
 /* /-footer */
+
+
+/* display itemcard */
+.card img{
+  width: 252.98px;
+  height: 252.98px;
+  }
+
+.minicard img{
+width: 139px;
+height: 139px;
+}
+/* /display itemcard */
+
+
+/* sidebar tiem kiem nang cao */
+.sidebartknc .list-group{
+  max-height: 250px ;
+  overflow-y: scroll;
+}
+/* sidebar tiem kiem nang cao */
+
+/* sidebar  */
+
+/* sidebar */

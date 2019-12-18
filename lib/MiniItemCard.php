@@ -1,5 +1,5 @@
 <?php
-class ItemCard {
+class MiniItemCard {
   public $masp;
   public $url;
   public $tensp;
@@ -22,8 +22,8 @@ class ItemCard {
     }
 
 
-    echo '<div class="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">'. 
-    '<div class="card">'. 
+    echo '<div class="col d-flex align-items-stretch">'. 
+    '<div class="card minicard">'. 
     "<a href=\""."index.php?layout=1&content=4&id=".$this->masp."\"><img class=\"card-img-top\" src=\"".'./images/sanpham/'.$this->url."\"></a>". 
     '<div class="card-body">'. 
     "<h6 class=\"card-title text-center\">" .$this->tensp . "</h6>". 
@@ -31,7 +31,6 @@ class ItemCard {
     ' <div class="price text-success">'. 
     "<h5 class=\"mt-4\">" . $this->giasp . " vnđ</h5>". 
     ' </div>'. 
-    '  <a href="'.$carturl.'" class="btn btn-danger mt-3"><i class="fa fa-shopping-cart"></i> Add to Cart</a>'. 
     '  </div>'. 
     ' </div>'. 
     '  </div>'. 

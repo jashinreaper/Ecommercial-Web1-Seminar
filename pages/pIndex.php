@@ -1,67 +1,86 @@
-<?php 
+<?php
 
 require_once('./lib/DataProvider.php');
 require_once('./lib/ItemCard.php');
 ?>
 
 
-  
-  <!-- Page Content -->
-  <div class="container">
 
-    <div class="row">
+<!-- Page Content -->
+<div class="container">
 
-      <!-- .col-lg-3 SIDE -->
-      <div class="col-lg-3">
+  <div class="row">
 
-        <?php
-        include "pSide.php"
-        ?>
+    <!-- .col-lg-3 SIDE -->
+    <div class="col-lg-3">
 
-      </div>
-      <!-- /.col-lg-3 -->
+      <?php
+      $side = 1;
+      if (isset($_GET["side"]) == true) #nếu có tham số truyền vào, mặc định là home
+        $side = $_GET["side"];
+      switch ($side) {
+        case 1:
+          include "pSide.php";
+          break;
+        case 2:
+          include "pSideTimKiem.php";
+          break;
+        default:
+          include "pages/p404error.php";
+          break;
+      }
+      ?>
+      <?php
 
-      <div class="col-lg-9">
-
-        <?php
-
-
-
-
-        $a = 1;
-        if (isset($_GET["a"]) == true) #nếu có tham số truyền vào, mặc định là home
-          $a = $_GET["a"];
-        switch ($a) {
-          case 1:
-            include "pSlider.php";
-            include "pSanPhamMoi.php";
-            include "pSanPhamBanChay.php";
-            break;
-          case 2:
-            include "pages/pSanPhamTheoHang.php";
-            break;
-          case 3:
-            include "pages/pSanPhamTheoLoai.php";
-            break;
-          case 4:
-            include "pages/pChiTietSanPham.php";
-            break;
-          default:
-            include "pages/p404error.php";
-            break;
-        }
-
-
-
-
-        ?>
-
-
-      </div>
-      <!-- /.col-lg-9 -->
+      ?>
 
     </div>
-    <!-- /.row -->
+    <!-- /.col-lg-3 -->
+
+    <div class="col-lg-9">
+
+      <?php
+
+
+
+
+      $content = 1;
+      if (isset($_GET["content"]) == true) #nếu có tham số truyền vào, mặc định là home
+        $content = $_GET["content"];
+      switch ($content) {
+        case 1:
+          include "pSlider.php";
+          include "pSanPhamMoi.php";
+          include "pSanPhamBanChay.php";
+          break;
+        case 2:
+          include "pages/pSanPhamTheoHang.php";
+          break;
+        case 3:
+          include "pages/pSanPhamTheoLoai.php";
+          break;
+        case 4:
+          include "pages/pChiTietSanPham.php";
+          break;
+        case 5:
+          include "pages/pSanPhamTimKiemNangCao.php";
+          break;
+        default:
+          include "pages/p404error.php";
+          break;
+      }
+
+
+
+
+      ?>
+
+
+    </div>
+    <!-- /.col-lg-9 -->
 
   </div>
-  <!-- /.container -->
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
