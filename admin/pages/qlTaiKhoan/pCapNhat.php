@@ -1,6 +1,6 @@
 <form action="pages/qlTaiKhoan/xlCapNhat.php" method="get">
     <fieldset>
-         <legend>cập nhập thông tin tài khoản</legend>
+         <legend class="border-bottom w-50">Cập nhập thông tin tài khoản</legend>
          <?php
            if(isset($_GET["id"]))
            {
@@ -13,11 +13,11 @@
 
            }
         ?>
-        <div>
+        <div class="mb-1">
            <span>Tên đăng nhập:</span>
-           <?php echo $TenDangNhap; ?>
+           <span class="font-weight-bold"><?php echo $TenDangNhap; ?></span>
         </div>
-        <div>
+        <div class="mb-1">
            <span>Loại tài khoản:</span>
            <select name="cmbLoaiTaiKhoan">
               <?php
@@ -35,7 +35,7 @@
             <input type="hidden" name="id" value="<?php echo $id; ?>" />
             </div>
             <div>
-                <input type="submit" value="Cập nhật" />
+                <input class="btn btn-primary" type="submit" value="Cập nhật" />
             </div>
         </fieldset>
 </form>

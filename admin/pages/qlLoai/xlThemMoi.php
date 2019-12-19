@@ -3,7 +3,7 @@
 
    if(isset($_GET["txtTen"]))
    {
-       $ten = $_GET["txtten"];
+       $ten = $_GET["txtTen"];
 
        $sql = "INSERT INTO LoaiSanPham(TenLoaiSanPham, BiXoa) VALUES('$ten',0)";
        DataProvider::ExecuteQuery($sql);

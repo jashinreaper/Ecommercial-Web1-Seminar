@@ -4,7 +4,7 @@
    if(isset($_GET["id"]))
    {
        $id = $_GET["id"];
-       $ten = $_GET["txtten"];
+       $ten = $_GET["txtTen"];
 
        $sql = "UPDATE HangSanXuat SET TenHangSanXuat = '$ten' WHERE MaHangSanXuat = $id";
 

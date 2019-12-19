@@ -2,7 +2,7 @@
   <fieldset>
        <legend>Thêm sản phẩm mới</legend>
     <div>
-       <span>Tên hãng sản xuất:</span>
+       <span>Tên sản phẩm:</span>
        <input type="text" name="txtTen" id="txtTen" />
        <i id="errTen"></i>
     </div>
@@ -21,6 +21,23 @@
               ?>
         </select>
     </div>
+    <div class="input-group mb-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Loại sản phẩm</span>
+            </div>
+            <select name="cmbLoai">
+                <?php
+                $sql = "SELECT *FROM LoaiSanPham WHERE BiXoa = 0";
+                $result = DataProvider::ExecuteQuery($sql);
+                while ($row1 = mysqli_fetch_array($result)) {
+                ?>
+                    <option value="<?php echo $row1["MaLoaiSanPham"]; ?>" <?php if ($row["MaLoaiSanPham"] == $row1["MaLoaiSanPham"]) echo "selected";
+                                                                            ?>><?php echo $row1["TenLoaiSanPham"]; ?></option>
+                <?php
+                }
+                ?>
+            </select>
+        </div>
     <div>
         <span>Hình</span>
         <input type="file" name="fHinh"/>

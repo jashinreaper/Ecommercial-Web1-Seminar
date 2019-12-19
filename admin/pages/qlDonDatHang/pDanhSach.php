@@ -1,7 +1,7 @@
 <a href="index.php?c=4&a=3">
-    <img src="images/new.png" />
+<i class="fa fa-plus mb-2 btn btn-primary"> Thêm mới</i>
 </a>
-<table cellspacing="0" border="1">
+<table class="table" cellspacing="0" border="1">
     <tr>
         <th width="100">STT</th>
         <th width="150">Mã đơn đặt hàng</th>
@@ -12,7 +12,7 @@
     </tr>
     <?php
     $sql = "SELECT  d.MaDonDatHang, d.NgayLap, d.MaTinhTrang, t.TenHienThi, tt.TenTinhTrang FROM TaiKhoan t, DonDatHang d, TinhTrang tt 
-              WHERE d.MaTaiKhoan = t.MaTaiKhoan AND d.MaTinhTrang = tt.MaTinhTran ORDER BY d.MaTinhTrang, d.NgayLap";
+              WHERE d.MaTaiKhoan = t.MaTaiKhoan AND d.MaTinhTrang = tt.MaTinhTrang ORDER BY d.MaTinhTrang, d.NgayLap";
     $result = DataProvider::ExecuteQuery($sql);
     $i = 1;
     while ($row = mysqli_fetch_array($result)) {
@@ -37,7 +37,7 @@
                 <td><?php echo $row["TenTinhTrang"]; ?></td>
                 <td>
                     <a href="index.php?c=5&a=2&id=<?php echo $row["MaDonDatHang"] ?> ">
-                        <img src="images/edit.png" />
+                    <i class="fa fa-edit btn btn-info"></i>
                     </a>
                 </td>
             </tr>

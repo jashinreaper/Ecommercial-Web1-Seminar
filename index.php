@@ -49,7 +49,7 @@ $_SESSION["path"] = $_SERVER["REQUEST_URI"];
       include "pages/giohang/pIndex.php";
       break;
     case 3:
-      include "pages/taotaikhoan/pIndex.php";
+      include "pages/dangky/pIndex.php";
       break;
     default:
       include "pages/p404error.php";

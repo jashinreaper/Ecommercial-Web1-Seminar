@@ -31,7 +31,7 @@
         while ($row = mysqli_fetch_array($result)) {
         ?>
             <div class="checkbox list-group-item p-1">
-                <label><input type="checkbox" name="<?php echo $row["MaLoaiSanPham"]; ?>" class="icheck"> <?php echo $row["TenLoaiSanPham"]; ?></label>
+                <label><input value="<?php echo $row["MaLoaiSanPham"]; ?>" type="checkbox" name="<?php echo $row["MaLoaiSanPham"]; ?>" class="icheck"> <?php echo $row["TenLoaiSanPham"]; ?></label>
             </div>
         <?php
                                                             }
@@ -51,7 +51,7 @@
                                                             while ($row = mysqli_fetch_array($result)) {
         ?>
             <div class="checkbox list-group-item p-1">
-                <label><input type="checkbox" name="<?php echo $row["MaHangSanXuat"]; ?>" class="icheck"> <?php echo $row["TenHangSanXuat"]; ?></label>
+                <label><input value="<?php echo $row["MaHangSanXuat"]; ?>" type="checkbox" name="<?php echo $row["MaHangSanXuat"]; ?>" class="icheck"> <?php echo $row["TenHangSanXuat"]; ?></label>
             </div>
         <?php
                                                             }

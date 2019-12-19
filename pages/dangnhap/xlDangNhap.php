@@ -23,7 +23,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
 
     if ($row["MaLoaiTaiKhoan"] == 2) 
         {
-            DataProvider::ChangeURL("../../index.php");
+            DataProvider::ChangeURL("../../admin/index.php");
      } 
     else
      {

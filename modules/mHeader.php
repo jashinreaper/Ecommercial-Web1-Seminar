@@ -1,3 +1,12 @@
+<?php
+$layout = 1;
+if (isset($_GET["layout"]))
+$layout = $_GET["layout"];
+$side = 1;
+if (isset($_GET["side"]))
+$side = $_GET["side"];
+?>
+
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
@@ -11,13 +20,12 @@
 
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item"> <!--active class  -->
-          <a class="nav-link" href="index.php">Trang chủ
-            <span class="sr-only">(current)</span>
-          </a>
+        <li class="nav-item">
+          <!--active class  -->
+          <a class="nav-link<?php if($layout==1&&$side!=2) echo " active"; ?>" href="index.php">Trang chủ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.php?layout=1&side=2&content=5">Sản phẩm</a>
+          <a class="nav-link<?php if($layout==1&&$side==2) echo " active"; ?>" href="index.php?layout=1&side=2&content=5">Sản phẩm</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
@@ -32,10 +40,14 @@
     <div class="nav-icons-container d-flex align-items-center justify-content-between">
       <div class="nav-icon">
 
-        <form class="form-inline" action="index.php?layout=1&side=2&content=5" method="post">
-          <input class="form-control mr-sm-2" type="text" name="searchTxt" placeholder="Nhập tên sản phẩm">
-          <button class="btn btn-light" type="submit"><i class="fa fa-search"></i></button>
+
+        <form class="input-group" action="index.php?layout=1&side=2&content=5" method="post">
+          <input type="text" class="form-control" placeholder="Search">
+          <div class="input-group-append">
+            <button class="btn btn-info" type="submit"><i class="fa fa-search"></i></button>
+          </div>
         </form>
+
 
       </div>
 
@@ -58,16 +70,16 @@
 
 
                 <?php
-                              if ($_SESSION["MaLoaiTaiKhoan"] == 2) {
+                if ($_SESSION["MaLoaiTaiKhoan"] == 2) {
                 ?>
                   <a href="./admin/index.php">Admin Panel </a>
                 <?php
-                              }
+                }
 
                 ?>
                 <div class="dropdown-divider mt-0"></div>
 
-                <a href="./pages/taikhoan/xlDangXuat.php">Đăng xuất </a>
+                <a href="./pages/dangnhap/xlDangXuat.php">Đăng xuất </a>
               </form>
 
 
@@ -77,7 +89,7 @@
         </div>
 
       <?php
-                            } else {
+      } else {
       ?>
         <div class="nav-icon">
 
@@ -91,7 +103,7 @@
               <i class="fa fa-user"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-              <form class="p-2 text-secondary" method="POST" action="./pages/taikhoan/xlDangNhap.php">
+              <form class="p-2 text-secondary" method="POST" action="./pages/dangnhap/xlDangNhap.php">
                 <div class="form-group">
                   <input name="username" type="text" class="form-control" placeholder="Nhập tên tài khoản" required>
                 </div>
@@ -110,20 +122,20 @@
 
       <?php
 
-                            }
+      }
 
       ?>
 
 
 
       <?php
-                            if (isset($_SESSION["sosanpham"])) #neu co san pham trong gio
-                            {
-                              $soSanPham = $_SESSION["sosanpham"];
-                            } else {
-                              $soSanPham = 0;
-                            }
-                            #hien thi badge so luong sp ở dưới
+      if (isset($_SESSION["sosanpham"])) #neu co san pham trong gio
+      {
+        $soSanPham = $_SESSION["sosanpham"];
+      } else {
+        $soSanPham = 0;
+      }
+      #hien thi badge so luong sp ở dưới
       ?>
 
 

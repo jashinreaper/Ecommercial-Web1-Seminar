@@ -3,11 +3,11 @@
 
    if(isset($_GET["txtTen"]))
    {
-       $ten = $_GET["txtten"];
+       $ten = $_GET["txtTen"];
 
        $sql = "INSERT INTO HangSanXuat(TenHangSanXuat, BiXoa) VALUES('$ten',0)";
        DataProvider::ExecuteQuery($sql);
    }
 
-   DataProvider::ChangeURL("../../index.php?c=3");
+   DataProvider::ChangeURL("../../index.php?c=4");
 ?>

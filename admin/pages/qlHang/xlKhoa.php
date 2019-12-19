@@ -6,7 +6,7 @@
        $id = $_GET["id"];
         //kiểm tra có sản phẩm thuộc về hãng đang muốn xóa hay không?
        $sql = "SELECT COUNT(*) FROM SanPham WHERE MaHangSanXuat = $id";
-       $result = DataProvider::ExecuteQuery($sql)
+       $result = DataProvider::ExecuteQuery($sql);
        $row = mysqli_fetch_array($result);
        if($row[0] == 0)
        {

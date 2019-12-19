@@ -1,50 +1,28 @@
 <div class="wrapper">
     <!-- Sidebar -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <h3>Bootstrap Sidebar</h3>
-        </div>
+    <div id="sidebar">
+    <h4 class="m-1 text-center">Dashboard</h4>
+    <hr class="my-0">
+    <div class="small ml-1">Quản lí</div>
+        <ul class="list-unstyled components pt-0 ml-1">
+            
 
-        <ul class="list-unstyled components">
-            <p>Dummy Heading</p>
-            <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a href="#">Home 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 3</a>
-                    </li>
-                </ul>
+            <li>
+            <a href="index.php?c=1" <?php if($c==1) echo "class='active'"; ?>><i class="far fa-user"></i> Quản lí tài khoản</a>
             </li>
             <li>
-                <a href="#">About</a>
+            <a href="index.php?c=2" <?php if($c==2) echo "class='active'"; ?>><i class="fas fa-box-open"></i> Quản lí sản phẩm</a>
             </li>
             <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">Page 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 3</a>
-                    </li>
-                </ul>
+            <a href="index.php?c=3" <?php if($c==3) echo "class='active'"; ?>><i class="fa fa-grip-vertical"></i> Quản lí loại</a>
             </li>
             <li>
-                <a href="#">Portfolio</a>
+            <a href="index.php?c=4" <?php if($c==4) echo "class='active'"; ?>><i class="far fa-handshake"></i> Quản lí hãng</a>
             </li>
             <li>
-                <a href="#">Contact</a>
+            <a href="index.php?c=5" <?php if($c==5) echo "class='active'"; ?>><i class="far fa-file-alt"></i> Quản lí đơn đặt hàng</a>
             </li>
         </ul>
-    </nav>
+</div>
 
 </div>

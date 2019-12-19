@@ -1,7 +1,7 @@
 <a href="index.php?c=4&a=3">
-    <img src="images/new.png"/>
+<i class="fa fa-plus mb-2 btn btn-primary"> Thêm mới</i>
 </a>
-<table cellspacing="0" border="1">
+<table class="table" cellspacing="0" border="1">
     <tr>
        <th width="100">STT</th>
        <th width="300"> Tên hãng sản xuất</th>
@@ -22,19 +22,19 @@
                       
                   <td>
                       <?php
-                         if($row["BiXoa"] == 1)
-                            echo "<img src='images/locked.png' />"
-                         else
-                            echo "<img src='images/active.png' />"
+                if ($row["BiXoa"] == 1)
+                echo '<i class="fa fa-ban"></i>';
+                else
+                echo '<i class="fa fa-check"></i>';
                        ?>
                   </td>
                  
                   <td>
                      <a href="pages/qlHang/xlKhoa.php?id=<?php echo $row["MaHangSanXuat"] ?>">
-                        <img src="images/lock.png"/>
+                     <i class="fa fa-lock btn btn-secondary"></i>
                     </a>
-                    <a href="index.php?c=1&a=2&id=<?php echo $row["MaHangSanXuat"] ?> ">
-                        <img src="images/edit.png"/>
+                    <a href="index.php?c=4&a=2&id=<?php echo $row["MaHangSanXuat"] ?> ">
+                    <i class="fa fa-edit btn btn-info"></i>
                     </a>
                 </td>
              </tr>

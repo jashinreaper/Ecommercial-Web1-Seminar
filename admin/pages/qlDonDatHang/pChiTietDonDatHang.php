@@ -3,13 +3,13 @@
       DataProvider::ChangeURL("index.php?c=404");
 
     $id = $_GET["id"];
-    $sql = "SELECT  d.MaDonDatHang, d.NgayLap, d.TonhThanhTien, t.TenHienThi, t.DiaChi, t.DienThoai, tt.MaTinhTrang, tt.TenTinhTrang FROM TaiKhoan t, DonDatHang d, TinhTrang tt 
-              WHERE d.MaTaiKhoan = t.MaTaiKhoan AND d.MaTinhTrang = tt.MaTinhTran AND MaDonDatHang = $id";
+    $sql = "SELECT  d.MaDonDatHang, d.NgayLap, d.TongThanhTien, t.TenHienThi, t.DiaChi, t.DienThoai, tt.MaTinhTrang, tt.TenTinhTrang FROM TaiKhoan t, DonDatHang d, TinhTrang tt 
+              WHERE d.MaTaiKhoan = t.MaTaiKhoan AND d.MaTinhTrang = tt.MaTinhTrang AND MaDonDatHang = $id";
              $result = DataProvider::ExecuteQuery($sql);
              $row = mysqli_fetch_array($result);
 ?>
 <fieldset>
-     <legend>Thông tin đơn đặt hàng</legend>
+     <legend class="border-bottom w-50">Thông tin đơn đặt hàng</legend>
      <div>
           <span>Mã đơn đặt hàng:</span>
           <?php echo $row["MaDonDatHang"]; ?>
@@ -34,21 +34,21 @@
           <span>Tổng thành tiền:</span>
           <?php echo $row["TongThanhTien"]; ?> đồng
       </div>
-      <a href="pages/qlDonDatHang/xlDonDatHang.php?a=2&id=<?php echo $id; ?>" class="btnGiaoHang">
+      <a href="pages/qlDonDatHang/xlDonDatHang.php?a=2&id=<?php echo $id; ?>" class="btnGiaoHang btn btn-primary">
            Giao hàng
       </a>
-      <a href="pages/qlDonDatHang/xlDonDatHang.php?a=2&id=<?php echo $id; ?>" class="btnThanhToan">
+      <a href="pages/qlDonDatHang/xlDonDatHang.php?a=2&id=<?php echo $id; ?>" class="btnThanhToan btn btn-success">
            Thanh toán
       </a>
-      <a href="pages/qlDonDatHang/xlDonDatHang.php?a=2&id=<?php echo $id; ?>" class="btnHuy">
+      <a href="pages/qlDonDatHang/xlDonDatHang.php?a=2&id=<?php echo $id; ?>" class="btnHuy btn btn-danger">
            Hủy đơn hàng
       </a>
-      <a href="#" onclick="window.print();" class="btnInDonHang">
+      <a href="#" onclick="window.print();" class="btnInDonHang btn btn-info">
             In đơn hàng
       </a>
 </fieldset>
-<h2>Chi tiết đơn hàng</h2>
-<table cellspacing="0" border="1">
+<h4 class="pt-2 border-bottom w-50">Chi tiết đơn hàng</h4>
+<table class="table" cellspacing="0" border="1">
    <tr>
        <th width="100">STT</th>
        <th width="150">Tên sản phẩm</th>
@@ -57,7 +57,7 @@
        <th width="100">Giá bán</th>
     </tr>
     <?php
-        $sql = "SELECT s.TenSanPham, s.HinhURL, c.SoLuong, c.GiaBan FROM ChiTietDonHang c, SanPham s WHERE c.MaSanPham = s.MaSanPham 
+        $sql = "SELECT s.TenSanPham, s.HinhURL, c.SoLuong, c.GiaBan FROM ChiTietDonDatHang c, SanPham s WHERE c.MaSanPham = s.MaSanPham 
           AND c.MaDonDatHang = $id";
         $result = DataProvider::ExecuteQuery($sql);
         $i = 1;
@@ -68,7 +68,7 @@
                   <td><?php echo $i++; ?></td>
                   <td><?php echo $row["TenSanPham"]; ?></td>
                   <td>
-                      <img src="../images/<?php echo $row["HinhURL"]; ?>" height="35"/>
+                      <img class="img-thumbnail" src="../images/sanpham/<?php echo $row["HinhURL"]; ?>"/>
                   </td>
                   <td><?php echo $row["SoLuong"]; ?></td>
                   <td><?php echo $row["GiaBan"]; ?></td>

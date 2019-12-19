@@ -1,5 +1,5 @@
 <h1> Tạo tài khoản mới</h1>
-<form action="pages/TaoTaiKhoan/xlTaoTaiKhoan.php" method="post" onsubmit="return KiemTra()">
+<form action="pages/dangky/xlTaoTaiKhoan.php" method="post" onsubmit="return KiemTra()">
    <div>
        <span class="lable">Tên đăng nhập:</span>
        <input type="text" id="us" name="us"/>

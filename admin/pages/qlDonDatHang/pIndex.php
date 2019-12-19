@@ -1,4 +1,5 @@
-<h1>Quản lý Đơn đặt hàng</h1>
+<h3 class="mb-0 pb-0">Quản lý đơn đặt hàng</h3>
+<hr class="mt-0 pt-0">
 <?php
     $a = 1;
     if(isset($_GET["a"]))
