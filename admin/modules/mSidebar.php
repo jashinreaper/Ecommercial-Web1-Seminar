@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper sticky-top">
     <!-- Sidebar -->
     <div id="sidebar">
     <h4 class="m-1 text-center">Dashboard</h4>
