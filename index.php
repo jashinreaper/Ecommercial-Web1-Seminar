@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+//đường dẫn hiện tại
 $_SESSION["path"] = $_SERVER["REQUEST_URI"];
 ?>
 
@@ -17,19 +17,19 @@ $_SESSION["path"] = $_SERVER["REQUEST_URI"];
   <!-- Bootstrap core CSS -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet">
-
   <!-- font-awesome -->
   <link rel="stylesheet" href="lib/fontawesome/css/all.min.css">
 
   <!-- Bootstrap core JavaScript -->
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+
   <!-- custom JavaScript -->
   <script src="js/myjs.js"></script>
-
-
+  <script language="JavaScript" type="text/javascript" src="js/ajax_captcha.js"></script>
 </head>
 
 <body>
@@ -39,11 +39,12 @@ $_SESSION["path"] = $_SERVER["REQUEST_URI"];
 
 
   $layout = 1;
-  if (isset($_GET["layout"]) == true) #nếu có tham số truyền vào, mặc định là homea
+  if (isset($_GET["layout"]) == true) #nếu có tham số thì set lại, mặc định là layout 1(home)
     $layout = $_GET["layout"];
+
   switch ($layout) {
     case 1:
-      include "pages/pIndex.php";
+      include "pages/pIndex.php"; //layout có sidebar bên trái và content ở giữa
       break;
     case 2:
       include "pages/giohang/pIndex.php";

@@ -6,47 +6,45 @@ require_once('./lib/ItemCard.php');
 
 
 
-<!-- Page Content -->
+<!-- BEGIN CONTAINER -->
 <div class="container">
 
+  <!-- .row -->
   <div class="row">
 
-    <!-- .col-lg-3 SIDE -->
+    <!-- BEGIN .col-lg-3 SIDE -->
     <div class="col-lg-3">
 
       <?php
       $side = 1;
-      if (isset($_GET["side"]) == true) #nếu có tham số truyền vào, mặc định là home
+      if (isset($_GET["side"]) == true) #nếu có tham số thì set lại, mặc định là SIDE bình thường
         $side = $_GET["side"];
+
       switch ($side) {
         case 1:
           include "pSide.php";
           break;
         case 2:
-          include "pSideTimKiem.php";
+          include "timkiemnangcao/pSideTimKiem.php"; #Side Tìm kiếm nâng cao
           break;
         default:
           include "pages/p404error.php";
           break;
       }
       ?>
-      <?php
-
-      ?>
 
     </div>
-    <!-- /.col-lg-3 -->
+    <!-- END .col-lg-3 -->
 
+    <!-- .col-lg-9 -->
     <div class="col-lg-9">
 
       <?php
 
-
-
-
       $content = 1;
-      if (isset($_GET["content"]) == true) #nếu có tham số truyền vào, mặc định là home
+      if (isset($_GET["content"]) == true) #nếu có tham số thì set lại, mặc định là CONTENT bình thường
         $content = $_GET["content"];
+
       switch ($content) {
         case 1:
           include "pSlider.php";
@@ -63,19 +61,15 @@ require_once('./lib/ItemCard.php');
           include "pages/pChiTietSanPham.php";
           break;
         case 5:
-          include "pages/pSanPhamTimKiemNangCao.php";
+          include "pages/timkiemnangcao/pSanPhamTimKiemNangCao.php";
           break;
         default:
           include "pages/p404error.php";
           break;
       }
 
-
-
-
       ?>
-
-
+      
     </div>
     <!-- /.col-lg-9 -->
 
@@ -83,4 +77,4 @@ require_once('./lib/ItemCard.php');
   <!-- /.row -->
 
 </div>
-<!-- /.container -->
+<!-- END CONTAINER -->

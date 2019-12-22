@@ -14,7 +14,7 @@ if (isset($_POST["txtTen"])) {
   //ko co hinh
   if (!file_exists($_FILES['fHinh']['tmp_name']) || !is_uploaded_file($_FILES['fHinh']['tmp_name'])) {
     $sql = "INSERT INTO SanPham(NgayNhap,TenSanPham, MaHangSanXuat,MaLoaiSanPham,GiaSanPham
-  ,SoLuongTon,MoTa) VALUES('$ngaynhap','$ten','$hang','$loai','$gia','$ton','$mota')";
+  ,SoLuongTon,MoTa,HinhURL) VALUES('$ngaynhap','$ten','$hang','$loai','$gia','$ton','$mota','../../imgs/products/2.jpg')";
   } else { //co hinh
 
     //----BEGIN UPLOAD IMAGE
