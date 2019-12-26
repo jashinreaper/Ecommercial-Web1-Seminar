@@ -68,7 +68,7 @@
                   <td><?php echo $i++; ?></td>
                   <td><?php echo $row["TenSanPham"]; ?></td>
                   <td>
-                      <img class="img-thumbnail" src="../images/sanpham/<?php echo $row["HinhURL"]; ?>"/>
+                      <img width="200" class="img-thumbnail" src="../images/sanpham/<?php echo $row["HinhURL"]; ?>"/>
                   </td>
                   <td><?php echo $row["SoLuong"]; ?></td>
                   <td><?php echo $row["GiaBan"]; ?></td>

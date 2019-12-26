@@ -14,11 +14,11 @@ class MiniItemCard {
   function create() {
     if (isset($_SESSION["MaTaiKhoan"])) 
     {
-      $carturl = 'index.php?layout=2&id='.$this->masp;
+      $carturl = 'index.php?layout=2&id='.$this->masp; //đã đăng nhập thì thêm vào vỏ hãng
     }
     else
     {
-      $carturl = 'index.php?layout=3';
+      $carturl = 'index.php?layout=3'; //chưa thì đăng ký
     }
 
 

@@ -14,26 +14,25 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
     $result = DataProvider::ExecuteQuery($sql);
     $row = mysqli_fetch_array($result);
     if ($row == null)
-        DataProvider::ChangeURL("../../index.php");
+        DataProvider::ChangeURL("../../index.php?layout=404"); //sai tk mk
     else {
         $_SESSION["MaTaiKhoan"] = $row["MaTaiKhoan"];
         $_SESSION["MaLoaiTaiKhoan"] = $row["MaLoaiTaiKhoan"];
         $_SESSION["TenHienThi"] = $row["TenHienThi"];
     }
 
-    if ($row["MaLoaiTaiKhoan"] == 2) 
+    if ($row["MaLoaiTaiKhoan"] == 2) //admin
         {
             DataProvider::ChangeURL("../../admin/index.php");
      } 
     else
      {
-        $curURL = $_SESSION["path"];
+        $curURL = $_SESSION["path"];    //chuyển về trang hiện tại
         DataProvider::ChangeURL($curURL);
-        #DataProvider::ChangeURL("../../index.php");
     }
 } else 
 {
-    DataProvider::ChangeURL("../../index.php");
+    DataProvider::ChangeURL("../../index.php?layout=404");//tk mk rỗng
 }
 
 ?>

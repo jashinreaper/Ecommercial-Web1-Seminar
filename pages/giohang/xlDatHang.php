@@ -8,7 +8,7 @@ if(isset($_SESSION["GioHang"]))
     $gioHang = unserialize($_SESSION["GioHang"]);
     $maTaiKhoan =$_SESSION["MaTaiKhoan"];
 
-    date_default_timezone_get("Asia/Ho_Chi_Minh");
+    date_default_timezone_set("Asia/Ho_Chi_Minh");
     $ngayLap=date("Y-m-d H:i:s");
     $ngayLapTam=date("Y-m-d");
     $maTinhTrang = 1;
@@ -18,7 +18,7 @@ if(isset($_SESSION["GioHang"]))
     $sql = "SELECT MaDonDatHang FROM DonDatHang WHERE NgayLap like '$ngayLapTam%' ORDER BY MaDonDatHang DESC LIMIT 1";
     $result = DataProvider::ExecuteQuery($sql);
     $row = mysqli_fetch_array($result);
-    $r="081012003";
+    #$r="081012003";
     $sttMaDonDatHang = 0;
     if($row != null)
     {
@@ -27,9 +27,8 @@ if(isset($_SESSION["GioHang"]))
     $sttMaDonDatHang += 1;
     $sttMaDonDatHang = sprintf("%03s",$sttMaDonDatHang);
     $maDonDatHang = date("d").date("m").substr(date("Y"),2,2).$sttMaDonDatHang;
-
     //tao don dat hang moi va luu xuong csdl bang don dat hang
-    $sql = "INSERT INTO DonDatHang(MaDonDatHang,NgayLap,TongThanhTien,MaTaiKhoan,MaTinhTrang)'$ngayLap',$tongGia,$maTaiKhoan,$maTinhTrang)";
+    $sql = "INSERT INTO DonDatHang(MaDonDatHang,NgayLap,TongThanhTien,MaTaiKhoan,MaTinhTrang)values('$maDonDatHang','$ngayLap','$tongGia','$maTaiKhoan','$maTinhTrang')";
     DataProvider::ExecuteQuery($sql);
     
     //-------------------------------------------
@@ -52,7 +51,7 @@ if(isset($_SESSION["GioHang"]))
         $maChiTietDonDatHang = $maDonDatHang.$sttChiTietDonDatHang;
 
         //2.2 them 1 dong moi vao bang Chitietdon dathang
-        $sql = "INSERT INTO ChiTietDonDatHang(MaChiTietDonDatHang,SoLuong,GiaBan,MaDonDatHang,MaSanPham)VALUES('$maChiTietDonDatHang',$sl,$giaSanPham,'$maDonDatHang',$id";
+        $sql = "INSERT INTO ChiTietDonDatHang(MaChiTietDonDatHang,SoLuong,GiaBan,MaDonDatHang,MaSanPham)VALUES('$maChiTietDonDatHang','$sl','$giaSanPham','$maDonDatHang','$id')";
         DataProvider::ExecuteQuery($sql);
 
         //2.3 update lai so luong ton cua bang san pham
@@ -61,6 +60,7 @@ if(isset($_SESSION["GioHang"]))
 
     }
     unset($_SESSION["GioHang"]);
+
     DataProvider::ChangeURL("../../index.php?layout=2&sub=2");
 
 }

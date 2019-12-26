@@ -1,10 +1,10 @@
 <?php
 $layout = 1;
 if (isset($_GET["layout"]))
-$layout = $_GET["layout"];
+  $layout = $_GET["layout"];
 $side = 1;
 if (isset($_GET["side"]))
-$side = $_GET["side"];
+  $side = $_GET["side"];
 ?>
 
 <!-- Navigation -->
@@ -22,10 +22,10 @@ $side = $_GET["side"];
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
           <!--active class  -->
-          <a class="nav-link<?php if($layout==1&&$side!=2) echo " active"; ?>" href="index.php">Trang chủ</a>
+          <a class="nav-link<?php if ($layout == 1 && $side != 2) echo " active"; ?>" href="index.php">Trang chủ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link<?php if($layout==1&&$side==2) echo " active"; ?>" href="index.php?layout=1&side=2&content=5">Sản phẩm</a>
+          <a class="nav-link<?php if ($layout == 1 && $side == 2) echo " active"; ?>" href="index.php?layout=1&side=2&content=5">Sản phẩm</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
@@ -36,23 +36,22 @@ $side = $_GET["side"];
       </ul>
     </div>
 
-
+    <!--begin right menu -->
     <div class="nav-icons-container d-flex align-items-center justify-content-between">
+
+      <!--begin search -->
       <div class="nav-icon">
-
-
         <form class="input-group" action="index.php?layout=1&side=2&content=5" method="post">
           <input type="text" class="form-control" name="searchTxt" placeholder="Search">
           <div class="input-group-append">
             <button class="btn btn-info" type="submit"><i class="fa fa-search"></i></button>
           </div>
         </form>
-
-
       </div>
+      <!-- end search -->
 
 
-
+      <!-- đã đăng nhập -->
       <?php
       if (isset($_SESSION["MaTaiKhoan"])) {
       ?>
@@ -68,7 +67,7 @@ $side = $_GET["side"];
               <form class="p-2 text-secondary" action="">
 
 
-
+                <!-- nếu là admin hiện admin panel -->
                 <?php
                 if ($_SESSION["MaLoaiTaiKhoan"] == 2) {
                 ?>
@@ -77,6 +76,8 @@ $side = $_GET["side"];
                 }
 
                 ?>
+                <!--  -->
+
                 <div class="dropdown-divider mt-0"></div>
 
                 <a href="./pages/dangnhap/xlDangXuat.php">Đăng xuất </a>
@@ -91,6 +92,7 @@ $side = $_GET["side"];
       <?php
       } else {
       ?>
+        <!-- tài khoản khách - chưa đăng nhập -->
         <div class="nav-icon">
 
           <div class="username">guest</div>
@@ -127,7 +129,7 @@ $side = $_GET["side"];
       ?>
 
 
-
+      <!-- begin giỏ hàng -->
       <?php
       if (isset($_SESSION["sosanpham"])) #neu co san pham trong gio
       {
@@ -150,6 +152,8 @@ $side = $_GET["side"];
 
         </div>
       </div>
+      <!-- end giỏ hàng -->
+      
     </div>
 
   </div>

@@ -39,7 +39,7 @@
         <!-- END FILTER BY money -->
 
 
-
+        <!-- BEGIN FILTER BY LOẠI -->
         <h5>Theo loại sản phẩm:</h5>
 
         <?php
@@ -58,8 +58,10 @@
             }
             ?>
         </div>
+        <!-- END FILTER BY LOẠI -->
 
 
+        <!-- BEGIN FILTER BY HÃNG -->
         <h5>Theo hãng sản phẩm:</h5>
 
         <?php
@@ -79,7 +81,7 @@
             ?>
         </div>
 
-
+        <!-- END FILTER BY HÃNG -->
 
     </form>
 </div>

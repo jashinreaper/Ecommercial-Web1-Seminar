@@ -28,8 +28,7 @@ $_SESSION["path"] = $_SERVER["REQUEST_URI"];
   <link href="css/style.css" rel="stylesheet">
 
   <!-- custom JavaScript -->
-  <script src="js/myjs.js"></script>
-  <script language="JavaScript" type="text/javascript" src="js/ajax_captcha.js"></script>
+  <script language="JavaScript" type="text/javascript" src="js/myjs.js"></script>
 </head>
 
 <body>

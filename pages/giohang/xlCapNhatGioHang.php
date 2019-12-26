@@ -14,11 +14,10 @@
 
            if($sl > 0)
            {
-               //xu ly cap nhap so luon moi
-
+               //xu ly cap nhap so luong moi
                $gioHang->update($id, $sl);
-               $_SESSION["GioHang"]==serialize($gioHang);
-
+               $_SESSION["GioHang"]=serialize($gioHang);
+             
            }
            else
            {
@@ -41,4 +40,5 @@
        DataProvider::ChangeURL("../../index.php?a=404");
     
    }
+   
 ?>

@@ -1,4 +1,4 @@
-<a href="index.php?c=4&a=3">
+<a href="index.php?c=5&a=3">
 <i class="fa fa-plus mb-2 btn btn-primary"> Thêm mới</i>
 </a>
 <table class="table" cellspacing="0" border="1">
